@@ -49,7 +49,7 @@ namespace OCRSharp
                 database = new OleDbConnection(ConStr);
                 database.Open();
                 //SQL query to list data
-                string queryString = "SELECT ID, NumberCar,DateIn, DateOut FROM data ";
+                string queryString = "SELECT ID, NumberCar,DateIn, DateOut, ImageData FROM data ";
                 loadDataGrid(queryString);
             }
             catch (Exception ex)
@@ -83,8 +83,8 @@ namespace OCRSharp
             dataGridView1.ReadOnly = true;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Width = 150;
-            dataGridView1.Columns[2].Width = 180;
-            dataGridView1.Columns[3].Width = 180;
+            dataGridView1.Columns[2].Width = 150;
+            dataGridView1.Columns[3].Width = 150;
 
             // insert delete button to datagridview
             deleteButton = new DataGridViewButtonColumn();
@@ -417,6 +417,60 @@ namespace OCRSharp
                 }
             }
         }
+       
+
+        //photobox is the picturebox holding picture
+
+        private byte[] ImageToStream(Image photo)
+        {
+
+            Bitmap image = new Bitmap(photo);
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, System.Drawing.Imaging.ImageFormat.Bmp);
+            return stream.ToArray();
+        }
+
+        private void StoreData(byte[] content)
+        {
+            string soxe = lptext.Text.ToString();
+            string giovao = indate.Text.ToString();
+
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=data.mdb");
+            //conn.Open();
+            if (database.State.Equals(ConnectionState.Closed))
+                database.Open();
+
+            try
+            {
+                //OleDbCommand insert = new OleDbCommand("INSERT INTO data(NumberCar,DateIn) VALUES('" + lptext.Text + "','" + indate.Text + "')", database);
+                // OleDbParameter imageParameter = insert.Parameters.Add("@Image", OleDbType.Binary);
+                //imageParameter.Value = content;
+                //imageParameter.Size = content.Length;
+                OleDbCommand insert = new OleDbCommand("INSERT INTO data(NumberCar,DateIn,ImageData) VALUES('" + lptext.Text + "','" + indate.Text + "',@ImageData)", database);
+                OleDbParameter imageParameter = new OleDbParameter
+                ("@ImageData", OleDbType.LongVarBinary, content.Length);
+                imageParameter.Value = content;
+                insert.Parameters.Add(imageParameter);
+                insert.ExecuteNonQuery();
+                MessageBox.Show("Data Stored successfully");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.StackTrace.ToString());
+            }
+            finally
+            {
+                database.Close();
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            StoreData(ImageToStream(pictureBox1.Image));
+            
+        } 
 
     }
 }
