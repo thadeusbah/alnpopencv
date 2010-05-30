@@ -56,6 +56,7 @@
             this.cmbBaudRate = new System.Windows.Forms.ComboBox();
             this.cmbPortName = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCapture = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnRecog = new System.Windows.Forms.Button();
@@ -68,7 +69,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCapture = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabCtrl.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -93,6 +94,7 @@
             // 
             // tabCtrl
             // 
+            this.tabCtrl.Controls.Add(this.button1);
             this.tabCtrl.Controls.Add(this.textBox1);
             this.tabCtrl.Controls.Add(this.lpreceived);
             this.tabCtrl.Controls.Add(this.groupBox3);
@@ -393,6 +395,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
             // 
+            // btnCapture
+            // 
+            this.btnCapture.Location = new System.Drawing.Point(441, 223);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(91, 51);
+            this.btnCapture.TabIndex = 2;
+            this.btnCapture.Text = "Capture From CAM";
+            this.btnCapture.UseVisualStyleBackColor = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(439, 165);
@@ -509,15 +521,15 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnCapture
+            // button1
             // 
-            this.btnCapture.Location = new System.Drawing.Point(441, 223);
-            this.btnCapture.Name = "btnCapture";
-            this.btnCapture.Size = new System.Drawing.Size(91, 51);
-            this.btnCapture.TabIndex = 2;
-            this.btnCapture.Text = "Capture From CAM";
-            this.btnCapture.UseVisualStyleBackColor = true;
-            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
+            this.button1.Location = new System.Drawing.Point(504, 331);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 28);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -586,6 +598,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCapture;
+        private System.Windows.Forms.Button button1;
     }
 }
 
