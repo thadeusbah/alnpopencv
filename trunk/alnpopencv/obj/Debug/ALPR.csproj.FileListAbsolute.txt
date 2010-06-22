@@ -22,3 +22,11 @@ E:\LUAN VAN\CODE C#\APLR\ALPR\bin\Debug\OpenCvSharp.Extensions.xml
 E:\LUAN VAN\CODE C#\APLR\ALPR\bin\Debug\OpenCvSharp.MachineLearning.xml
 E:\LUAN VAN\CODE C#\APLR\ALPR\obj\Debug\APLR.pdb
 E:\LUAN VAN\CODE C#\APLR\ALPR\bin\Debug\APLR.exe.config
+E:\LUAN VAN\BACKUP\APLR\ALPR\bin\Debug\APLR.exe.config
+E:\LUAN VAN\BACKUP\APLR\ALPR\obj\Debug\APLR.exe
+E:\LUAN VAN\BACKUP\APLR\ALPR\obj\Debug\APLR.pdb
+E:\LUAN VAN\CODE C#\APLR\ALPR\obj\Debug\Interop.MSCommLib.dll
+E:\LUAN VAN\CODE C#\APLR\ALPR\obj\Debug\AxInterop.MSCommLib.dll
+E:\LUAN VAN\CODE C#\APLR\ALPR\obj\Debug\ALPR.csproj.ResolveComReference.cache
+E:\LUAN VAN\CODE C#\APLR\ALPR\bin\Debug\Interop.MSCommLib.dll
+E:\LUAN VAN\CODE C#\APLR\ALPR\bin\Debug\AxInterop.MSCommLib.dll
