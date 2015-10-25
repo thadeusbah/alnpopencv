@@ -1,0 +1,1 @@
+Automatic license number recognition
